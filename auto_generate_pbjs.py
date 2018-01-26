@@ -30,7 +30,7 @@ def main():
     os.system('pbjs -t static-module -w commonjs -o {0}/js/proto.js {0}/proto/*.proto'.format(current_dir))
     for root, dirs, files in os.walk(proto_path):
         for f in files:
-            url = '{}/{}'.format(root, f)
+            url = '{}{}'.format(root, f)
             if os.path.isfile(url) and os.path.splitext(f)[1] == '.proto':
                 msg = get_proto_msg(url)
                 set_id(msg)
@@ -41,8 +41,9 @@ def get_proto_msg(proto_url):
     print(proto_url)
     with open(proto_url, 'r', encoding='utf-8') as txt:
         proto = txt.read()
-        pkg = re.search(r'package (.*?);', proto).group(1)
-        msg = re.findall(r'message (.*?) {', proto)
+        pkg = re.search(r'package\s*(.*?)\s*;', proto).group(1)
+        msg = re.findall(r'message\s*(.*?)\s*{', proto)
+        print(msg)
         return {
             'pkg': pkg.replace('.', '_'),
             'msg': msg

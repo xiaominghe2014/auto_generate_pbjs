@@ -1,0 +1,19 @@
+syntax="proto3";
+
+package aa.bb.cc;
+
+message RankReq{
+    int32 uid = 1;
+}
+
+message UserTicket {
+    int32 order = 1;
+    string nickname = 2;
+    float amount = 3;
+}
+
+message RankResp{
+    UserTicket userTicket = 1;
+    repeated UserTicket userTicketList = 2;
+}
+

@@ -4,11 +4,17 @@
 
 const protos = require('./proto')
 var protoIds = { 
+	 aa_bb_cc:require('./aa_bb_cc'), 
 	 com_group_app:require('./com_group_app'), 
 } 
 
 
 const findMessage = function(cmd) {
+	 for (let key in protoIds.aa_bb_cc) {
+		if (protoIds.aa_bb_cc[key] == cmd) {
+			return protos.aa.bb.cc[key]
+		}
+	}
 	 for (let key in protoIds.com_group_app) {
 		if (protoIds.com_group_app[key] == cmd) {
 			return protos.com.group.app[key]
@@ -67,7 +73,6 @@ const bufferToMsg = function(data) {
         msg : decoded
     }
 }
-
 
 module.exports.msgToBuffer = msgToBuffer
 module.exports.bufferToMsg = bufferToMsg
