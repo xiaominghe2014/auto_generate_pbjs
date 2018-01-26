@@ -1,0 +1,11 @@
+syntax="proto3";
+
+package com.group.app;
+
+message Version {
+    string version = 1;
+}
+
+message User {
+    string uid = 1;
+}
