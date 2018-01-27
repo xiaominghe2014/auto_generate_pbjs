@@ -24,7 +24,7 @@ python3
 const utils = require('./bufferUtils')
 let version = new utils.protos.com.group.app.Version()
 version.version = '0.0.0'
-const buffer = utils.msgToBuffer(protoIds.com_group_app.Version,version)
+const buffer = utils.msgToBuffer(utils.protoIds.com_group_app.Version,version)
 const msg = utils.bufferToMsg(buffer)
 console.log(msg)
 ```
