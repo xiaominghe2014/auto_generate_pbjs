@@ -140,6 +140,8 @@ const bufferToMsg = function(data) {
     }
 }
 
+module.exports.protos = protos
+module.exports.protoIds = protoIds
 module.exports.msgToBuffer = msgToBuffer
 module.exports.bufferToMsg = bufferToMsg
 
