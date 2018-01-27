@@ -22,7 +22,9 @@ python3
 ## 4.示例
 ```js
 const utils = require('./bufferUtils')
-const buffer = utils.msgToBuffer(protoIds.com_group_app.Version,{version:'0.0.0'})
+let version = new utils.protos.com.group.app.Version()
+version.version = '0.0.0'
+const buffer = utils.msgToBuffer(protoIds.com_group_app.Version,version)
 const msg = utils.bufferToMsg(buffer)
 console.log(msg)
 ```

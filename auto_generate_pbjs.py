@@ -43,7 +43,6 @@ def get_proto_msg(proto_url):
         proto = txt.read()
         pkg = re.search(r'package\s*(.*?)\s*;', proto).group(1)
         msg = re.findall(r'message\s*(.*?)\s*{', proto)
-        print(msg)
         return {
             'pkg': pkg.replace('.', '_'),
             'msg': msg
