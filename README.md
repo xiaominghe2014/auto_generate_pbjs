@@ -6,7 +6,7 @@
 1. 将proto文件放入 proto文件夹
 2. 运行python脚本
   ```shell
-  python auto_generate_pbjs.js
+  python auto_generate_pbjs.py
   ```
   ok,大功告成
  
@@ -19,7 +19,7 @@
 ## 3. python 环境
 python3
 
-## 4.示例
+## 4.js测试示例
 ```js
 const utils = require('./bufferUtils')
 let version = new utils.protos.com.group.app.Version()
